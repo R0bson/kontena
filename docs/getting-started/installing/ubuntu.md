@@ -85,6 +85,13 @@ SSL_CERT=/path/to/certificate.pem
 $ sudo start kontena-server-haproxy
 ```
 
+If you don't have an SSL certificate, you can generate a self-signed certificate with:
+```
+$ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt
+cat certificate.crt privateKey.key > cert.pem
+cp cert.pem /path/to/certificate.pem
+```
+
 
 ### Login to Kontena Master
 
